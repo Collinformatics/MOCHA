@@ -1,3 +1,8 @@
+# MOCHA: Motif Orientation and Characterization for High-throughput Assays
+
+This bioinformatic analysis will analyze profiling data, and evaluate the specificity of an enzyme that interacts with protein sequences.
+
+
 # Install Modules:
 
     pip install Flask
@@ -5,6 +10,7 @@
     pip install networkx
     pip install seaborn
     pip install wordcloud
+
 
 # Running the Program:
 
