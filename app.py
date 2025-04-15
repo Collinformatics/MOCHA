@@ -5,10 +5,6 @@ from functions import processData, subsDefault
 app = Flask(__name__)
 
 
-# Add citations
-# Position descriptions for Trie
-# Rename algorithm
-
 @app.route('/run', methods=['POST'])
 def run():
     # Get file from the form
