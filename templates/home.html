@@ -209,7 +209,6 @@
                     marginBottom: "{{ marginB }}px"
                 });
 
-
             // Figure Descriptions
             noteProb = "First the amino acid probabilities are evaluated. This allows for the visualization of how the enzyme's specificity changes the probability distributions.";
             noteEntropy = "The probability distributions are used to determine which positions in the sequence are important for the substrate recognition.<sup>1, 2</sup><br><br>A high ∆S value indicates a high degree of specificity at that position.";
@@ -218,7 +217,6 @@
             noteMotifProb = "This figure uses the Motif counts to determine the probability of finding each Motif in the dataset.";
             noteWords = "The Word Cloud is another way to visualize the preferred Motif.<br><br>Larger words correspond to Motifs with a high number of counts.";
             noteTrie = "The Suffix Tree starts with the root node, and then displays the positions within the Motif in the ranked descending order of their ∆S value. In other words, the levels are not going to be in same sequential order of as displayed in the Motif. Any positions within the Motif that have a ∆S value that is below the Minimum ∆S value will be excluded from this figure.<br><br>Each level includes the residues that are found at the corresponding substrate position, and the size of the node is proportional to the probability of finding the residue within the set of selected Motifs at that position.";
-
 
             // Now insert into the HTML
             newDiv.innerHTML = `
@@ -335,23 +333,19 @@
             <p>For a guided visualization of how the analysis works when using a template dataset, press the "Evaluate" button without uploading a Text file.</p>
             <p2><br>{{ pg6|safe }}
         </div>
-
         <div class="container-description">
             <div class="div-header">Citations:</div>
-
             <p>
                 1)  <a href="https://genome.cshlp.org/content/14/6/1188.full" target="_blank">
                     Crooks, G. E., et al. Genome Research. (2004)
                 </a>
             </p>
-
             <p>
                 2)  <a href="https://www.cambridge.org/core/journals/mathematical-structures-in-computer-science/article/shannon-entropy-a-rigorous-notion-at-the-crossroads-between-probability-information-theory-dynamical-systems-and-statistical-physics/4A4B7B069BCF64CC595635D865317C83" target="_blank">
                     Lesne, Annick.  Mathematical Structures in Computer Science. (2014)
                 </a>
             </p>
         </div>
-
         <div class="container">
             <div class="container-input">
                 <form action="/run" method="POST" enctype="multipart/form-data" class="input-form">
@@ -360,18 +354,15 @@
                     <label for="textFile"></label>
                     <input type="file" id="textFile" name="textFile" accept=".txt" class="input-form">
                 </div>
-
                 <div class="div-header">Experiment Parameters:</div>
                 <div class="form-group">
                     <label for="enzymeName">Enzyme Name:</label>
                     <input type="text" id="enzymeName" name="enzymeName" required value="Name">
                 </div>
-
                 <div class="form-group">
                     <label for="entropyMin">Minimum ∆S Value:</label>
                     <input type="number" id="entropyMin" name="entropyMin" step="0.05" value="0.6" required>
                 </div>
-
                 <div class="form-group">
                     <label for="N">Select N Substrates:</label>
                     <input type="number" id="N" name="N" value="25" required>
