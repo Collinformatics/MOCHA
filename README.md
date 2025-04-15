@@ -4,4 +4,4 @@
     pip install logomaker
     pip install networkx
     pip install seaborn
-    
+    pip install wordcloud
