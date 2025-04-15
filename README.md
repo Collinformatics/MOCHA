@@ -12,7 +12,6 @@ This tool is only compatable with enzymes that interact with protein sequences.
     pip install seaborn
     pip install wordcloud
 
-
 # Running the Program:
 
 To use the program, run the app.py script.
