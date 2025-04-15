@@ -92,9 +92,9 @@ def home():
             "combinations of residues across the Motif. This reveals the unique "
             "preferences for a given amino acid when another is present in a preferred "
             "substrate.",
-        pg6="The source code is available at "
+        pg6="The source code is available at: "
             "<a href=\"https://github.com/Collinformatics/MOCHA\" "
-            "target=\"_blank\">Github/Collinformatics/MOCHA</a>"
+            "target=\"_blank\">github.com/Collinformatics/MOCHA</a>"
     )
 
 
