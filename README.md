@@ -44,4 +44,4 @@ Defending upon how long your extracted motif is, the Bar Graphs might cut of par
 
 - Find the line where this function the is defined: plotBarGraph
     
-- Adjust the "bottom" parameter in the line: fig.subplots_adjust(bottom=0.11)
+- Adjust the value of the "bottom" parameter in the line: fig.subplots_adjust(bottom=0.11)
