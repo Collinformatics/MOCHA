@@ -282,7 +282,7 @@ def plotEntropy(probAA, AA, enzymeName):
     cbar.ax.tick_params(axis='y', which='major', labelsize=labelSizeTicks,
                         length=tickLength, width=lineThickness)
     for tick in cbar.ax.yaxis.get_major_ticks():
-        tick.tick1line.set_markeredgewidth(lineThickness)  # Set tick width
+        tick.tick1line.set_markeredgewidth(lineThickness) # Set tick width
     cbar.outline.set_linewidth(lineThickness)
 
     # Convert figure to base64
@@ -391,7 +391,7 @@ def plotWeblogo(probAA, entropy, entropyMax, N, enzymeName):
     # Use the spacer to set a grey background to fixed residues
     for index, pos in enumerate(colHeights):
         if 1.0 in probAA.loc[:, pos]:
-            # Plot grey boxes on each side of the xtick
+            # Plot grey boxes on each side of the x-tick
             motif.ax.axvspan(index - spacer, index + spacer,
                              facecolor='darkgrey', alpha=0.2)
 
@@ -431,8 +431,7 @@ def binSubstrates(substrates, entropy, entropyMin, NSelect, enzymeName):
     binnedSubs = dict(sorted(binnedSubs.items(), key=lambda item: item[1], reverse=True))
 
     # Plot: Binned substrates NBinSubs, figBinCounts, figBinProb, figWords, figTrie
-    output = plotBinnedSubstrates(
-        binnedSubs, countTotalSubs, NSelect, entropy, entropyMin, enzymeName)
+    output = plotBinnedSubstrates(binnedSubs, countTotalSubs, NSelect, entropy, entropyMin, enzymeName)
 
     return output
 

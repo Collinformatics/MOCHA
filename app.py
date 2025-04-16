@@ -85,7 +85,7 @@ def home():
         pg5="We can further evaluate the top Motifs by feeding the data into a Suffix "
             "Tree. This analysis will select the specific residues within the Motif, "
             "and plot the amino acids as nodes, with lines connecting the observed "
-            "combinations of residues across the Motif. This reveals the unique "
+            "combinations of residues across the Motif. The figure reveals the unique "
             "preferences for a given amino acid when another is present in a preferred "
             "substrate.",
         pg6="The source code is available at: "
