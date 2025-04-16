@@ -68,7 +68,7 @@ def home():
             "program will take profiling data for a given enzyme and identify the "
             "Motif, or the recognition site, within the larger protein sequence. "
             "The Motif is identified by the positions in the substrate that have an "
-            "Entropy score (∆S) that in is ≥ to a user defined minimum ∆S value.",
+            "Entropy score (∆S) that is ≥ to a user defined minimum ∆S value.",
         pg2="∆S is evaluated at each position in the substrate sequence and is found by "
             "the difference between the Maximum Entropy (S<sub>Max</sub>) and the "
             "Shannon Entropy (S<sub>Shannon</sub>)<br>",
