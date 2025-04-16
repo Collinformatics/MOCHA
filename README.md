@@ -34,6 +34,8 @@ Input sequences can only contain the standard 20 amino acids:
 
     'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V'
 
+The protein sequences should have the same lenght.
+
 # Note:
 
 Defending upon how long your extracted motif is, the Bar Graphs might cut of part of the sequence when working with longer motifs. Or they could have excessive space when displaying shorter motifs.
