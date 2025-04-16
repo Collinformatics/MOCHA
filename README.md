@@ -1,6 +1,6 @@
 # MOCHA: Motif Orientation and Characterization for High-throughput Assays
 
-This bioinformatic analysis will analyze enzyme profiling data, and evaluate the specificity of an enzyme.
+This bioinformatic analysis will analyze enzyme profiling data, and evaluate the specificity of your enzyme.
 
 Input data must be in a text file, with 1 substrate per line.
 
