@@ -64,7 +64,7 @@ def home():
         fontSize=16,
         borderRad=5,
 
-        pg1="For enzymes that interact with protein, and peptide substrates, this "
+        pg1="For enzymes that interact with protein and peptide substrates, this "
             "program will take profiling data for a given enzyme and identify the "
             "Motif, or the recognition site, within the larger protein sequence. "
             "The Motif is identified by the positions in the substrate that have an "
