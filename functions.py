@@ -448,9 +448,11 @@ def plotBinnedSubstrates(binnedSubs, N, NSelect, entropy, entropyMin, enzymeName
         fig, ax = plt.subplots(figsize=figSize, dpi=dpi)
         bars = plt.bar(xValues, yValues, color=barColor, width=barWidth)
         plt.ylabel(yLabel, fontsize=labelSizeAxis)
-        plt.title(f'{title}\nN = {N:,}', fontsize=labelSizeTitle, fontweight='bold')
+        plt.title(f'\n{title}\nN = {N:,}', fontsize=labelSizeTitle, fontweight='bold')
         plt.axhline(y=0, color='black', linewidth=lineThickness)
         plt.ylim(yMin, yMax)
+        plt.tight_layout()
+        fig.subplots_adjust(bottom=0.11)
 
         # Integer y-ticks if appropriate
         if yLabel == 'Counts' and yMax < 100:
