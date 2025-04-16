@@ -4,7 +4,7 @@ This bioinformatic analysis will analyze enzyme profiling data, and evaluate the
 
 Input data must be in a text file, with 1 substrate per line.
 
-- For an example of a correctly formatted file, see: exampleData.txt
+- For an example of a correctly formatted file, refer to: exampleData.txt
 
 # Install Modules:
 
