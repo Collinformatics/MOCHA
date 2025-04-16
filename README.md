@@ -31,3 +31,13 @@ This tool is only compatable with enzymes that interact with protein sequences.
 Input sequences can only contain the standard 20 amino acids:
 
     'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V'
+
+# Note:
+
+Defending upon how long your extracted motif is, the Bar Graphs might cut of part of the sequence when working with longer motifs. Or they could have excessive space when displaying shorter motifs.
+
+- To adjust the spacing on the bottom of the figure, open the script: functions.py
+
+- Find the line where this function the is defined: plotBarGraph
+    
+- Adjust the "bottom" parameter in the line: fig.subplots_adjust(bottom=0.11)
