@@ -8,6 +8,8 @@ Input data must be in a text file, with 1 substrate per line.
 
 # Install Modules:
 
+You will need to install the following Python modules:
+
     pip install Flask
     pip install logomaker
     pip install networkx
