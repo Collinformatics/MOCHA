@@ -451,7 +451,7 @@ def plotBinnedSubstrates(binnedSubs, N, NSelect, entropy, entropyMin, enzymeName
         plt.axhline(y=0, color='black', linewidth=lineThickness)
         plt.ylim(yMin, yMax)
         plt.tight_layout()
-        fig.subplots_adjust(bottom=0.11)
+        fig.subplots_adjust(bottom=0.11) # <---- Adjust me! ----
 
         # Integer y-ticks if appropriate
         if yLabel == 'Counts' and yMax < 100:
