@@ -10,29 +10,43 @@
                 padding: 40px;
             }
             h1 {
+                color: {{ white }};
                 text-align: center;
                 color: #{{ white }};
                 font-size: 35px;
                 padding-bottom: 20px;
             }
             h2 {
+                color: {{ white }};
                 text-align: center;
                 font-size: 25px;
                 padding: 10px;
             }
             p {
+                color: {{ white }};
                 font-size: {{ fontSize }}px;
                 text-align: left;
                 padding-top: 0px;
                 padding-bottom: 0px;
             }
             p2 {
-                display: block;
+                color: {{ white }};
                 font-size: {{ fontSize }}px;
                 text-align: center;
+                display: block;
                 padding-top: 0px;
                 padding-bottom: 0px;
                 margin: {{ spacer }}px auto;
+            }
+            a:active {
+                color: #00D9FF;
+            }
+            a:visited {
+                color: #A100FF;
+            }
+            a:hover {
+                color: #BF5700;
+                text-decoration: underline;
             }
             .container-description {
                 background-color: {{ grey }};
@@ -46,6 +60,7 @@
             }
             .container {
                 background-color: {{ grey }};
+                color: {{ white }};
                 font-size: 20px;
                 text-align: center;
                 border-radius: {{ borderRad }}px;
@@ -58,6 +73,7 @@
             }
             .container-input {
                 background-color: {{ grey }};
+                color: {{ white }};
                 font-size: 20px;
                 text-align: center;
                 border-radius: {{ borderRad }}px;
@@ -70,6 +86,7 @@
             }
             .container-params {
                 background-color: {{ grey }};
+                color: {{ white }};
                 font-size: 20px;
                 border-radius: {{ borderRad }}px;
                 display: flex;
@@ -80,6 +97,7 @@
                 margin: 5px auto;
             }
             .container-figDescription {
+                color: {{ white }};
                 font-size: 18px;
                 text-align: center;
                 display: flex;
@@ -112,7 +130,7 @@
             }
             input[type="file"] {
                 background-color: {{ black }};
-                color: #101010;
+                color: {{ green }};
                 font-size: {{ fontSize }}px;
                 border: 2px solid {{ greyDark }};
                 border-radius: {{ borderRad }}px;
@@ -136,6 +154,7 @@
                 background-color: {{ greenHighlight }};
             }
             .input-form {
+                color: {{ white }};
                 align-items: center;
                 text-align: center; /* center form text */
                 display: flex;
@@ -143,17 +162,20 @@
                 font-size: {{ fontSize }}px;
             }
             .form-group {
+                color: {{ white }};
                 width: 100%;
                 max-width: 350px;
                 line-height: 1.5;
             }
             .form-group label {
+                color: {{ white }};
                 display: block;
                 margin-bottom: {{ spacerMini }}px;
                 font-size: {{ fontSize }}px;
                 text-align: center;
             }
             .form-group input {
+                color: {{ white }};
                 font-size: {{ fontSize }}px;
                 border-radius: {{ borderRad }}px;
                 border: 2px solid {{ greyDark }};
@@ -327,12 +349,12 @@
             <p>{{ pg5|safe }}</p>
         </div>
         <div class="container-description">
-            <div class="div-header">Additional Information:</div>
-            <p>Uploaded files must be formatted as .txt<br>- An example of a correctly formatted text file is provided in the MOCHA repository on GitHub</p>
-            <p>Input data must be a set protein sequences that are of the same length with only one sequence per line in the input file.</p>
-            <p>For optimal analysis of your data, it is recommended to apply a filter to your input data.<br> - Example: use a set of substrates all contain a preferred residue at a single position in the sequence.</p>
-            <p>For a guided explanation of how the analysis works, press the "Evaluate" button without uploading a Text file. This will use run the analysis on a template dataset.</p>
-            <p2><br>{{ pg6|safe }}
+            <div class="div-header">Running The Program:</div>
+            <p>This website is being hosted on your computer.<br>- Sourse Code is available at: <a href="https://github.com/Collinformatics/MOCHA" target=\"_blank\">github.com/Collinformatics/MOCHA</a></p>
+            <p>Requirements: Input data<br>- All protein sequences must have the same sequence length.<br>- An uploaded file can only contain one sequence per line.</p>
+            <p>Uploaded files must be formatted as .txt<br>- An example of a <a href="https://github.com/Collinformatics/MOCHA/blob/main/exampleData.txt" target=\"_blank\">correctly formatted text file</a> is provided on GitHub.</p>
+            <p>In order to accurately identify a Motif, it is recommended to apply a filter to your data before uploading the file.<br>- Example: Use a set of known substrates that contain a preferred residue at a given position in the sequence.</p>
+            <p>For a guided explanation of how the analysis works, press the "Evaluate" button without uploading a Text file. This will use run the analysis on a template dataset.<br>- The evaluation will take a few seconds to complete.<br>- Once finished, the results will be displayed at the bottom of the page.</p>
         </div>
         <div class="container-description">
             <div class="div-header">Citations:</div>
