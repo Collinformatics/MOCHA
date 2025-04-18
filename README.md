@@ -20,11 +20,13 @@ You will need to install the following Python modules:
 
 To host the website on your device, run the "app.py" script.
 
-The code will generate an IP address and port number for the website. 
+- The code will generate an IP address and port number for the website. 
 
-- Once the IP has been an displayed, click on it and the application will open in your browser.
+    - Once the IP has been an displayed, click on it and the application will open in your browser.
 
-Futher instructions will be displayed on the webpage.
+- Futher instructions will be displayed on the webpage.
+
+For an example of a properly formated input file, see: exampleData.txt 
 
 # Limitations:
 
