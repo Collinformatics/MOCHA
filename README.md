@@ -66,7 +66,6 @@ The probability distributions are used to evaluate the Positional Entropy (∆S)
   ∆S = S<sub>Max</sub> - S<sub>Shannon</sub> = log<sub>2</sub>(20) - ∑(-prob<sub>AA</sub> × log<sub>2</sub>(prob<sub>AA</sub>))
 </p>
 
-
 - A high ∆S value indicates a high degree of specificity at that position.
 
 <p align="center">
