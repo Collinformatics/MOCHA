@@ -44,7 +44,7 @@ Input sequences can only contain the standard 20 amino acids:
 
 # Note:
 
-Defending upon how long your extracted motif is, the Bar Graphs might cut of part of the sequence when working with longer motifs. Or they could have excessive space when displaying shorter motifs.
+Defending upon how long your extracted Motif is, the Bar Graphs might cut of part of the sequence when working with longer Motifs. Or they could have excessive space when displaying shorter Motifs.
 
 - To adjust the spacing on the bottom of the figure, open the script: functions.py
 
@@ -76,7 +76,7 @@ We extract the Motif from the substrate sequence by removing the non-specific po
 
 ![image](https://github.com/user-attachments/assets/21496236-7f4c-4c60-a7e5-4d54acf8e1b0)
 
-We also evaluate the probability of finding a given motif
+We also evaluate the probability of finding a given Motif
 
 ![image](https://github.com/user-attachments/assets/ec6ea8dd-7bfe-47fa-9269-c59d0e9ecfe9)
 
