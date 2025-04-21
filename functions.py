@@ -24,7 +24,8 @@ figBorders = [0.882, 0.075, 0.05, 0.98]
 dpi = 300
 
 # Experimental parameters
-AA = ['A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V']
+AA = ['A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I',
+      'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V']
 
 # Set matplotlib backend as non-interactive
 matplotlib.use('Agg')

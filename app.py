@@ -69,7 +69,7 @@ def home():
         "program will take profiling data for a given enzyme, and identify the "
         "Motif, or the recognition site, that is present within the larger protein "
         "sequence. The Motif is identified by the positions in the substrate that have "
-        "an Entropy score (∆S) that is ≥ to a user defined minimum ∆S value.",
+        "an Entropy score (∆S) ≥ a user defined minimum ∆S value.",
     pg2="∆S is evaluated at each position in the substrate sequence and is found by "
         "calculating the difference between the Maximum Entropy (S<sub>Max</sub>) and "
         "the Shannon Entropy (S<sub>Shannon</sub>)<br>",
@@ -78,7 +78,8 @@ def home():
     pg3="<br>Once the Motif has been have identified, the substrates are binned by "
         "selecting only the recognition sequence. In other words, the parts of the "
         "sequence that are not important for an Enzyme-Substrate interaction are "
-        "removed.",
+        "removed.<br>- The non-important positions are identified by meeting the "
+        "condition: ∆S < minimum ∆S",
     pg4="The program will then count the occurrences of each Motif, and collect the "
         "top \"N\" number of sequences. The subset is used to make Bar Graphs, and a "
         "Word Cloud. These figures display the most common combinations of active "
