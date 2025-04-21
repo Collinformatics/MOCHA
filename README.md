@@ -32,11 +32,15 @@ For an example of a properly formated input file, see: exampleData.txt
 
 This tool is only compatable with enzymes that interact with protein sequences.
 
+All input sequences should have the same lenght.
+
 Input sequences can only contain the standard 20 amino acids:
 
-    'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V'
+- The default list of AAs is defined by this line:
 
-The protein sequences should have the same lenght.
+        AA = ['A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V']
+
+    - If you need to expand this list, open functions.py and edit the variable:
 
 # Note:
 
