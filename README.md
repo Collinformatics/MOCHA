@@ -58,6 +58,9 @@ The AAs in the input sequences are counted, and then the probability of finding 
 
 ![image](https://github.com/user-attachments/assets/c93fe542-1d98-43fd-9649-4300de8d123b)
 
+![image](https://github.com/user-attachments/assets/9fe6b5e7-cf4e-475f-8e53-dc9d5ef562bc)
+
+
 The probability distributions are used to evaluate the Positional Entropy (∆S).
 
 - A high ∆S value indicates a high degree of specificity at that position.
