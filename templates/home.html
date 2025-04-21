@@ -341,12 +341,9 @@
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    const errorDiv = document.createElement('div');
-                    errorDiv.className = 'container';
-                    errorDiv.innerHTML = `<p style="color: red;">
-                        Error fetching results: ${error.message}</p>`;
-                    document.body.appendChild(errorDiv);
-            });
+                    newDiv.innerHTML += `<p style="color: red;">${error.message}</p>`;
+                }
+            );
         }
     </script>
     <body>
@@ -362,21 +359,20 @@
         </div>
         <div class="container-description">
             <div class="div-header">Running The Program:</div>
-            <p>This website is being hosted on your computer.<br>- Sourse Code is available at: <a href="https://github.com/Collinformatics/MOCHA" target=\"_blank\">github.com/Collinformatics/MOCHA</a></p>
+            <p>This website is being hosted on your computer.<br>- Sourse Code is available at: <a href="https://github.com/Collinformatics/MOCHA" target=\"_blank\"><strong>github.com/Collinformatics/MOCHA</strong></a></p>
             <p>Requirements: Input data<br>- All protein sequences must have the same sequence length.<br>- An uploaded file can only contain one sequence per line.</p>
-            <p>Uploaded files must be formatted as .txt<br>- An example of a <a href="https://github.com/Collinformatics/MOCHA/blob/main/exampleData.txt" target=\"_blank\">correctly formatted text file</a> is provided on GitHub.</p>
+            <p>Uploaded files must be formatted as .txt<br>- An example of a <a href="https://github.com/Collinformatics/MOCHA/blob/main/exampleData.txt" target=\"_blank\"><strong>correctly formatted text file</strong></a> is provided on GitHub.</p>
             <p>In order to accurately identify a Motif, it is recommended to apply a filter to your data before uploading the file.<br>- Example: Use a set of known substrates that contain a preferred residue at a given position in the sequence.</p>
             <p>For a guided explanation of how the analysis works, press the "Evaluate" button without uploading a Text file. This will use run the analysis on a template dataset.<br>- The evaluation will take a few seconds to complete.<br>- Once finished, the results will be displayed at the bottom of the page.</p>
         </div>
         <div class="container-description">
             <div class="div-header">Citations:</div>
             <p>
-                1) <a href="https://genome.cshlp.org/content/14/6/1188.full" target="_blank"> Crooks, G. E., et al. Genome Research. (2004)
+                1) <a href="https://genome.cshlp.org/content/14/6/1188.full" target="_blank"><strong>Crooks, G. E., et al. Genome Research. (2004)</strong>
                 </a>
             </p>
             <p>
-                2) <a href="https://www.cambridge.org/core/journals/mathematical-structures-in-computer-science/article/shannon-entropy-a-rigorous-notion-at-the-crossroads-between-probability-information-theory-dynamical-systems-and-statistical-physics/4A4B7B069BCF64CC595635D865317C83" target="_blank">Lesne, Annick.  Mathematical Structures in Computer Science. (2014)
-                </a>
+                2) <a href="https://www.cambridge.org/core/journals/mathematical-structures-in-computer-science/article/shannon-entropy-a-rigorous-notion-at-the-crossroads-between-probability-information-theory-dynamical-systems-and-statistical-physics/4A4B7B069BCF64CC595635D865317C83" target="_blank"><strong>Lesne, Annick.  Mathematical Structures in Computer Science. (2014)</strong></a>
             </p>
         </div>
         <div class="container">
