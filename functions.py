@@ -380,7 +380,7 @@ def plotWeblogo(probAA, entropy, entropyMax, N, enzymeName):
                         left=figBorders[2], right=figBorders[3])
 
     # Label the axes
-    motif.ax.set_xlabel('Position', fontsize=labelSizeAxis)
+    motif.ax.set_xlabel('Substrate Position', fontsize=labelSizeAxis)
     motif.ax.set_ylabel('Bits', fontsize=labelSizeAxis)
 
     # Evaluate dataset for fixed residues
