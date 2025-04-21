@@ -245,7 +245,7 @@ def plotEntropy(probAA, AA, enzymeName):
     plt.xlabel('Substrate Position', fontsize=labelSizeAxis)
     ax.set_ylabel('ΔS', fontsize=labelSizeAxis, rotation=0, labelpad=15)
     plt.title(f'{enzymeName}', fontsize=labelSizeTitle, fontweight='bold')
-    plt.subplots_adjust(top=figBorders[0], bottom=figBorders[1]+0.02,
+    plt.subplots_adjust(top=figBorders[0]+0.05, bottom=figBorders[1]+0.02,
                         left=figBorders[2]+0.015, right=figBorders[3]-0.035)
 
     # Set tick parameters
