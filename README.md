@@ -40,7 +40,7 @@ Input sequences can only contain the standard 20 amino acids:
 
         AA = ['A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V']
 
-    - If you need to expand this list, open functions.py and edit the variable:
+    - If you need to expand this set of AAs, open functions.py and edit the list.
 
 # Note:
 
