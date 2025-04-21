@@ -190,7 +190,7 @@
         function evaluateForm(event) {
             event?.preventDefault(); // Prevent any default form action
 
-            // Add alert
+            // Add new container
             const newDiv = document.createElement('div');
             newDiv.className = 'container';
             Object.assign(newDiv.style, {
@@ -207,7 +207,7 @@
                 marginBottom: "{{ marginB }}px"
             });
 
-            // Initial message while processing
+            // Add alert
             newDiv.innerHTML = `<p>Your data is being processed.</p>`;
             document.body.appendChild(newDiv);
 
