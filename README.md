@@ -56,6 +56,9 @@ Defending upon how long your extracted motif is, the Bar Graphs might cut of par
 
 The AAs in the input sequences are counted, and then the probability of finding a given AA at each position in the substrate is evaluated.
 
+![image](https://github.com/user-attachments/assets/f36b700e-b7e3-47ac-8e64-6d2661f033f3)
+
+
 ![image](https://github.com/user-attachments/assets/c93fe542-1d98-43fd-9649-4300de8d123b)
 
 The probability distributions are used to evaluate the Positional Entropy (∆S).
