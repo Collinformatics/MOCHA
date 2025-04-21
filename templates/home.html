@@ -244,109 +244,108 @@
                 return response.json();
             })
             .then(data => {
+                // Figure Descriptions
+                noteProb = "First the amino acid probabilities are evaluated. This allows for the visualization of how the enzyme's specificity changes the probability distributions.";
+                noteEntropy = "The probability distributions are used to determine which positions in the sequence are important for the substrate recognition.<sup>1, 2</sup><br><br>A high ∆S value indicates a high degree of specificity at that position.";
+                noteWeblogo = "By multiplying the probability of a given residue at a given position by the ∆S value of that position we can obtain a Weblogo.<sup>1</sup><br><br>In this figure, the more preferred a given residue is, the larger it will be.<br>Additionally, the taller the stack of amino acids is, the more selective the enzyme is for what residues can be found at that position.";
+                noteMotifCounts = "The Positional Entropy is used to extract the Motif from the larger substrate sequence.<br><br>By removing the non-specific parts of the substrate (residues in the sequence with ∆S values are below the Minimum ∆S value) wan can obtain the Moitf.<br><br>By counting the number of occurrences of each Motif in the dataset, we obtain this figure.";
+                noteMotifProb = "This figure uses the Motif counts to determine the probability of finding each Motif in the dataset.";
+                noteWords = "The Word Cloud is another way to visualize the preferred Motif.<br><br>Larger words correspond to Motifs with a high number of counts.";
+                noteTrie = "The Suffix Tree starts with the root node, and then displays the positions within the Motif in the ranked descending order of their ∆S value. In other words, the levels are not going to be in same sequential order of as displayed in the Motif. Any positions within the Motif that have a ∆S value that is below the Minimum ∆S value will be excluded from this figure.<br><br>Each level includes the residues that are found at the corresponding substrate position, and the size of the node is proportional to the probability of finding the residue within the set of selected Motifs at that position.";
 
-            // Figure Descriptions
-            noteProb = "First the amino acid probabilities are evaluated. This allows for the visualization of how the enzyme's specificity changes the probability distributions.";
-            noteEntropy = "The probability distributions are used to determine which positions in the sequence are important for the substrate recognition.<sup>1, 2</sup><br><br>A high ∆S value indicates a high degree of specificity at that position.";
-            noteWeblogo = "By multiplying the probability of a given residue at a given position by the ∆S value of that position we can obtain a Weblogo.<sup>1</sup><br><br>In this figure, the more preferred a given residue is, the larger it will be.<br>Additionally, the taller the stack of amino acids is, the more selective the enzyme is for what residues can be found at that position.";
-            noteMotifCounts = "The Positional Entropy is used to extract the Motif from the larger substrate sequence.<br><br>By removing the non-specific parts of the substrate (residues in the sequence with ∆S values are below the Minimum ∆S value) wan can obtain the Moitf.<br><br>By counting the number of occurrences of each Motif in the dataset, we obtain this figure.";
-            noteMotifProb = "This figure uses the Motif counts to determine the probability of finding each Motif in the dataset.";
-            noteWords = "The Word Cloud is another way to visualize the preferred Motif.<br><br>Larger words correspond to Motifs with a high number of counts.";
-            noteTrie = "The Suffix Tree starts with the root node, and then displays the positions within the Motif in the ranked descending order of their ∆S value. In other words, the levels are not going to be in same sequential order of as displayed in the Motif. Any positions within the Motif that have a ∆S value that is below the Minimum ∆S value will be excluded from this figure.<br><br>Each level includes the residues that are found at the corresponding substrate position, and the size of the node is proportional to the probability of finding the residue within the set of selected Motifs at that position.";
+                // Pass data into the HTML script
+                newDiv.innerHTML = `
+                    <div class="div-header">Results:</div>
+                    <div class="container-params">
+                        <p2><strong>Enzyme:</strong> ${enzymeName}</p2>
+                        <p2><strong>Minimum ∆S:</strong> ${entropyMin}</p2>
+                        <p2><strong>Selecting N Substrates:</strong> ${data.NSelect}</p2>
+                        <p2><strong>Unique Motifs Obtained:</strong> ${data.NBinSubs}</p2>
+                    </div>
+                    <div class="container-fig">
+                        <div class="div-header">
+                            Amino Acid Probability Distribution:
+                        </div>
+                        <p>${noteProb}</p>
+                        <p2><img src="data:image/png;base64,${data.figProb}"
+                            alt="Probability Plot" style="max-width: 100%;" /></p2>
+                    </div>
 
-            // Pass data into the HTML script
-            newDiv.innerHTML = `
-                <div class="div-header">Results:</div>
-                <div class="container-params">
-                    <p2><strong>Enzyme:</strong> ${enzymeName}</p2>
-                    <p2><strong>Minimum ∆S:</strong> ${entropyMin}</p2>
-                    <p2><strong>Selecting N Substrates:</strong> ${data.NSelect}</p2>
-                    <p2><strong>Unique Motifs Obtained:</strong> ${data.NBinSubs}</p2>
-                </div>
-                <div class="container-fig">
-                    <div class="div-header">
-                        Amino Acid Probability Distribution:
+                    <div class="container-fig">
+                        <div class="div-header">
+                            Positional Entropy (ΔS):
+                        </div>
+                        <div class="container-figDescription">
+                            <p2>{{ equation|safe }}<\p2>
+                            <p>${noteEntropy}</p>
+                        </div>
+                        <p2><img src="data:image/png;base64,${data.figEntropy}"
+                            alt="Entropy Plot" style="max-width: 100%;" /></p2>
                     </div>
-                    <p>${noteProb}</p>
-                    <p2><img src="data:image/png;base64,${data.figProb}"
-                        alt="Probability Plot" style="max-width: 100%;" /></p2>
-                </div>
+                    <div class="container-fig">
+                        <div class="div-header">
+                            Weblogo:
+                        </div>
+                        <div class="container-figDescription">
+                            <p2>Letter Size = ΔS<sub>Pos</sub> × prob<sub>AA@Pos</sub></p2>
+                            <p>${noteWeblogo}</p>
+                        </div>
+                        <p2><img src="data:image/png;base64,${data.figLogo}"
+                            alt="Weblogo" style="max-width: 100%;" /></p2>
+                    </div>
+                    <div class="container-fig">
+                        <div class="div-header">
+                            Motif Counts:
+                        </div>
+                        <div class="container-figDescription">
+                            <p>${noteMotifCounts}</p>
+                        </div>
+                        <p2><img src="data:image/png;base64,${data.barCounts}"
+                            alt="Bar Graph: Motif Counts"
+                            style="max-width: 100%;" /></p2>
+                    </div>
+                    <div class="container-fig">
+                        <div class="div-header">
+                            Motif Probability:
+                        </div>
+                        <div class="container-figDescription">
+                            <p>${noteMotifProb}</p>
+                        </div>
+                        <p2><img src="data:image/png;base64,${data.barProb}"
+                            alt="Bar Graph: Motif Probability"
+                            style="max-width: 100%;" /></p2>
+                    </div>
+                    <div class="container-fig">
+                        <div class="div-header">
+                            Word Cloud:
+                        </div>
+                        <div class="container-figDescription">
+                            <p>${noteWords}</p>
+                        </div>
+                        <p2><img src="data:image/png;base64,${data.figWords}"
+                            alt="Words" style="max-width: 100%;" /></p2>
+                    </div>
+                    <div class="container-fig">
+                        <div class="div-header">
+                            Suffix Tree:
+                        </div>
+                        <div class="container-figDescription">
+                            <p>${noteTrie}</p>
+                        </div>
+                        <p2><img src="data:image/png;base64,${data.figTrie}"
+                            alt="Trie" style="max-width: 100%;" /></p2>
+                    </div>
+                `;
 
-                <div class="container-fig">
-                    <div class="div-header">
-                        Positional Entropy (ΔS):
-                    </div>
-                    <div class="container-figDescription">
-                        <p2>{{ equation|safe }}<\p2>
-                        <p>${noteEntropy}</p>
-                    </div>
-                    <p2><img src="data:image/png;base64,${data.figEntropy}"
-                        alt="Entropy Plot" style="max-width: 100%;" /></p2>
-                </div>
-                <div class="container-fig">
-                    <div class="div-header">
-                        Weblogo:
-                    </div>
-                    <div class="container-figDescription">
-                        <p2>Letter Size = ΔS<sub>Pos</sub> × prob<sub>AA@Pos</sub></p2>
-                        <p>${noteWeblogo}</p>
-                    </div>
-                    <p2><img src="data:image/png;base64,${data.figLogo}"
-                        alt="Weblogo" style="max-width: 100%;" /></p2>
-                </div>
-                <div class="container-fig">
-                    <div class="div-header">
-                        Motif Counts:
-                    </div>
-                    <div class="container-figDescription">
-                        <p>${noteMotifCounts}</p>
-                    </div>
-                    <p2><img src="data:image/png;base64,${data.barCounts}"
-                        alt="Bar Graph: Motif Counts"
-                        style="max-width: 100%;" /></p2>
-                </div>
-                <div class="container-fig">
-                    <div class="div-header">
-                        Motif Probability:
-                    </div>
-                    <div class="container-figDescription">
-                        <p>${noteMotifProb}</p>
-                    </div>
-                    <p2><img src="data:image/png;base64,${data.barProb}"
-                        alt="Bar Graph: Motif Probability"
-                        style="max-width: 100%;" /></p2>
-                </div>
-                <div class="container-fig">
-                    <div class="div-header">
-                        Word Cloud:
-                    </div>
-                    <div class="container-figDescription">
-                        <p>${noteWords}</p>
-                    </div>
-                    <p2><img src="data:image/png;base64,${data.figWords}"
-                        alt="Words" style="max-width: 100%;" /></p2>
-                </div>
-                <div class="container-fig">
-                    <div class="div-header">
-                        Suffix Tree:
-                    </div>
-                    <div class="container-figDescription">
-                        <p>${noteTrie}</p>
-                    </div>
-                    <p2><img src="data:image/png;base64,${data.figTrie}"
-                        alt="Trie" style="max-width: 100%;" /></p2>
-                </div>
-            `;
-
-            document.body.appendChild(newDiv);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                const errorDiv = document.createElement('div');
-                errorDiv.className = 'container';
-                errorDiv.innerHTML = `<p style="color: red;">
-                    Error fetching results: ${error.message}</p>`;
-                document.body.appendChild(errorDiv);
+                document.body.appendChild(newDiv);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'container';
+                    errorDiv.innerHTML = `<p style="color: red;">
+                        Error fetching results: ${error.message}</p>`;
+                    document.body.appendChild(errorDiv);
             });
         }
     </script>
