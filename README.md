@@ -32,10 +32,10 @@ For an example of a properly formated input file, see: exampleData.txt
 
 You may encounter an error similar to this:
 
- * Serving Flask app 'app'
- * Debug mode: on
-Address already in use
-Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+     * Serving Flask app 'app'
+     * Debug mode: on
+    Address already in use
+    Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
 
 - This means that the port you are trying to use to host the website is not avalible
 
