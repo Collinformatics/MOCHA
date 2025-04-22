@@ -28,34 +28,6 @@ To host the website on your device, run the "app.py" script.
 
 For an example of a properly formated input file, see: exampleData.txt 
 
-# Server Related Issues:
-
-You may encounter an error similar to this:
-
-     * Serving Flask app 'app'
-     * Debug mode: on
-    Address already in use
-    Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
-
-- This means that the port you are trying to use to host the website is not avalible
-
-    - You can inspect the port by running the List Service command in the terminal:
-
-            lsof -i :5000
-
-    - Look for "Python" in the "COMMAND" column
-
-            COMMAND     PID     NODE NAME
-            Python    49231 ... 0t0  TCP localhost:commplex-main (LISTEN)
-            Python    49288 ... 0t0  TCP localhost:commplex-main (LISTEN)
-            Python    49288 ... 0t0  TCP localhost:commplex-main (LISTEN)
-
-    - Use the Process ID (PID) (49231, 49288) to terminate listening sockets on port 5000
-
-             kill -9 49231 49288
-    
-    - Now you can rerun app.py without getting the "Address already in use" error.
-
 # Limitations:
 
 This tool is only compatable with enzymes that interact with protein sequences.
@@ -137,3 +109,31 @@ Finally, we evaluate the specific combinations of AAs in the selected set of Mot
 <p align="center">
   <img src="https://github.com/user-attachments/assets/7ab6a873-4d90-4e6d-98df-2c54a070d8bb" width="700">
 </p>
+
+# Server Related Issues:
+
+You may encounter an error similar to this:
+
+     * Serving Flask app 'app'
+     * Debug mode: on
+    Address already in use
+    Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+
+- This means that the port you are trying to use to host the website is not avalible
+
+    - You can inspect the port by running the List Open Files command in the terminal:
+
+            lsof -i :5000
+
+    - Look for "Python" in the "COMMAND" column
+
+            COMMAND     PID     NODE NAME
+            Python    49231 ... 0t0  TCP localhost:commplex-main (LISTEN)
+            Python    49288 ... 0t0  TCP localhost:commplex-main (LISTEN)
+            Python    49288 ... 0t0  TCP localhost:commplex-main (LISTEN)
+
+    - Use the Process ID (PID) (49231, 49288) to terminate these processes:
+
+             kill 49231 49288
+    
+    - Now you can rerun app.py without getting the "Address already in use" error.
