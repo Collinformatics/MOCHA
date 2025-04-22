@@ -119,13 +119,13 @@ You may encounter an error similar to this:
     Address already in use
     Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
 
-- This means that the port you are trying to use to host the website is not avalible
+- This means that the port you are trying to use to host the website is not avalible.
 
     - You can inspect the port by running the List Open Files command in the terminal:
 
             lsof -i :5000
 
-    - Look for "Python" in the "COMMAND" column
+    - Look for "Python" in the "COMMAND" column.
 
             COMMAND     PID     NODE NAME
             Python    49231 ... 0t0  TCP localhost:commplex-main (LISTEN)
