@@ -121,7 +121,13 @@ You may encounter an error similar to this:
 
 - This means that the port you are trying to use to host the website is not avalible.
 
-    - We need to terminate the process before we can create a new website.
+    - We need to terminate the server before we can create a new website.
+
+# Terminating The Server:
+
+Leaving the process running can be a significant drain on your battery, so its best to turn things off after you are done.
+
+This is also how to handle the previouly mentioned Server Related Issue.
 
 - MacOS:
 
@@ -163,5 +169,3 @@ You may encounter an error similar to this:
     Kill the process:
 
         taskkill /PID 20352 /F
-
-Now you can rerun app.py without getting the "Address already in use" error.
