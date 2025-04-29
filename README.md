@@ -129,6 +129,8 @@ Leaving the process running can be a significant drain on your battery, so its b
 
 This is also how to handle the previouly mentioned Server Related Issue.
 
+The commands you enter into the terminal will depend upon your OS:
+
 - MacOS:
 
     List open files on port 5000:
