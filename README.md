@@ -121,7 +121,7 @@ You may encounter an error similar to this:
 
 - This means that the port you are trying to use to host the website is not avalible.
 
-    We need to terminate the process before we can create a new website.
+    - We need to terminate the process before we can create a new website.
 
 - MacOS:
 
