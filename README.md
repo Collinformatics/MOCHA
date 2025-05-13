@@ -125,11 +125,7 @@ You may encounter an error similar to this:
 
 # Terminating The Server:
 
-Leaving the process running can be a significant drain on your battery, so its best to turn things off after you are done.
-
-This is also how to handle the previouly mentioned Server Related Issue.
-
-The commands you enter into the terminal will depend upon your OS:
+To turn off the server after you are done, or to handle the previouly mentioned Server Related Issue, use these terminal commands:
 
 - MacOS:
 
